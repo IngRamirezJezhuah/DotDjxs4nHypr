@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Definir los atajos en un formato limpio para el menú
+MENU_OPTIONS="󰕾 Vol Up / Down   | Teclas dedicadas de volumen
+󰍬 Mute Mic       | Tecla dedicada de Micrófono
+󰖁 Mute Audio     | Fn + F1
+󰃡 Brillo Teclado | Fn + F2 (Bajar) / Fn + F3 (Subir)
+󰈐 Perfil Energía | Fn + F5 (Ahorro / Equilibrado / Alto Rendimiento)
+󰃟 Brillo Pantalla| Fn + F7 (Bajar) / Fn + F8 (Subir)
+󰍺 Proyectar      | Fn + F9
+󰟈 Touchpad       | Fn + F10 (Alternar encendido/apagado)
+󰤄 Suspender      | Fn + F11
+󰀝 Modo Avión     | Fn + F12
+󱂬 Numpad [/]     | Launcher de Monitor Btop
+󱠹 Numpad [*]     | Terminal Rápida de Python"
+
+# Lanzar Rofi con un diseño limpio que combine con tu tema de Wallust
+echo -e "$MENU_OPTIONS" | rofi -dmenu \
+    -p "󰌌 DJ-Shell Hardware Shortcuts" \
+    -i \
+    -theme-str 'window {width: 600px; border: 2px; border-color: @border-color;} listview {lines: 12;}'
