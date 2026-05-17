@@ -1,0 +1,16 @@
+#==========================================================
+#     DINAMISMO: ATAJOS DE TRANSICIONES ALTERNATIVAS       |   
+#==========================================================
+# Presiona SUPER + ALT + [Número] para cambiar el efecto visual al vuelo:
+
+# 🌀 Variante 1: Efecto "Outer" (Se expande como una onda circular desde el centro)
+bind = $mainMod ALT, 1, exec, swww img /home/djxs4n/Imágenes/wallpapers/Anime-Girl-Rain.png --transition-type outer --transition-fps 60 --transition-step 45
+
+# 🌊 Variante 2: Efecto "Wave" (Un barrido ondulatorio ideal para la lluvia)
+bind = $mainMod ALT, 2, exec, swww img /home/djxs4n/Imágenes/wallpapers/Anime-Girl-Rain.png --transition-type wave --transition-fps 60 --transition-step 60 --transition-angle 45
+
+# 🌌 Variante 3: Efecto "Grow" (Crece orgánicamente desde la esquina superior derecha)
+bind = $mainMod ALT, 3, exec, swww img /home/djxs4n/Imágenes/wallpapers/Anime-Girl-Rain.png --transition-type grow --transition-fps 60 --transition-step 50 --transition-pos top-right
+
+# 🎲 Variante 4: Efecto Ruleta (Selecciona una transición al azar del motor de swww)
+bind = $mainMod ALT, 4, exec, swww img /home/djxs4n/Imágenes/wallpapers/Anime-Girl-Rain.png --transition-type random --transition-fps 60 --transition-step 50
