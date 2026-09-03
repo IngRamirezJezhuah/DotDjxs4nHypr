@@ -4,7 +4,9 @@
 -- ========================================
 
 -- añadir directorio 'lua/' a la ruta de ejecucion
-package.path = package.path .. ";" .. os.getenv("HOME") .. "/.config/hypr/lua/?.lua"
+package.path = package.path 
+  .. ";" .. os.getenv("HOME") .. "/.config/hypr/lua/?.lua"
+  .. ";" .. os.getenv("HOME") .. "/.config/hypr/LuaConf/?.lua"
 
 hl.on("hyprland.start". function()
   hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/intial-boot.sh")
@@ -22,6 +24,11 @@ require("rules")
 require("keybinds")
 require("autostart")
 
+-- =======
+-- Luaconf
+-- =======
+require("ENVariables")
+require("Laptops")
 
 pcall(require, "user")
 
