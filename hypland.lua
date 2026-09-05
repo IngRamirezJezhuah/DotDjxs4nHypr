@@ -29,6 +29,13 @@ require("autostart")
 -- =======
 require("ENVariables")
 require("Laptops")
+require("SystemsSettings")
+require("Startup_Apps")
+require("Keybinds")
+require("WindowRules")
+require("Animations")
+require("Monitors")
+
 
 pcall(require, "user")
 
