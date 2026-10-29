@@ -188,7 +188,9 @@ hl.bind("xf86Sleep", hl.dsp.exec_cmd("systemctl suspend"), { locked = true, desc
 hl.bind("xf86Rfkill", hl.dsp.exec_cmd(scriptsDir .. "/AirplaneMode.sh"), { locked = true, description = "airplane mode" })
 
 -- media controls using keyboards
-hl.bind("xf86AudioPlayPause", hl.dsp.exec_cmd(scriptsDir .. "/MediaCtrl.sh --pause"), { locked = true, description = "play/pause" })
+-- xf86AudioPlayPause: keysym INEXISTENTE en xkbcommon (el bind legacy era muerto también);
+-- la tecla física play/pause la cubre xf86AudioPlay (debajo). Descomentar solo si xkb añade el keysym.
+-- hl.bind("xf86AudioPlayPause", hl.dsp.exec_cmd(scriptsDir .. "/MediaCtrl.sh --pause"), { locked = true, description = "play/pause" })
 hl.bind("xf86AudioPause", hl.dsp.exec_cmd(scriptsDir .. "/MediaCtrl.sh --pause"), { locked = true, description = "pause" })
 hl.bind("xf86AudioPlay", hl.dsp.exec_cmd(scriptsDir .. "/MediaCtrl.sh --pause"), { locked = true, description = "play" })
 hl.bind("xf86AudioNext", hl.dsp.exec_cmd(scriptsDir .. "/MediaCtrl.sh --nxt"), { locked = true, description = "next track" })
