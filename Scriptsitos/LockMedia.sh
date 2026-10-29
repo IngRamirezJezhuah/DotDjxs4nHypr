@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #reproductor de audio para hyprlock
 
 player=$(playerctl -l 2>/dev/null | head -1)
