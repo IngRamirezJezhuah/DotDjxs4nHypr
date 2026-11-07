@@ -5,33 +5,34 @@
  *    ~/.config/quickshell/djxs4n/theme.qml
  ===========================================*/
 
- import QtQuick
- import Quickshell
+import QtQuick
+import Quickshell
 
- Row {
-   id:root
+Row {
+    id: root
 
-   spacing: 8
-   SysremClock {
-     id:clock
-     precision: Systemctclock.Minues
-   }
+    spacing: 8
 
-   Text {
-     text: Qt.formatDateTime(clock.sate, "ddd d MMM"),toUpperCase()
-     color: Theme.secondayText
-     font.family: Theme.fontFamily
-     font.pixelSize: true
-     verticalAligment: Text.AligmnetVCenter
-   }
+    SystemClock {
+        id: clock
+        precision: SystemClock.Minutes
+    }
 
-   Text {
-     text: Qt.fpr,atDateTime(clock.date, "HH:mm")
-     color: Theme.primaryText
-     font.PixelSize: Theme.fontSize
-     font.bold: true
-     verticalLaigment: Text.AlignVCenter
-   }
- }
+    Text {
+        text: Qt.formatDateTime(clock.date, "ddd d MMM").toUpperCase()
+        color: Theme.secondaryText
+        font.family: Theme.fontFamily
+        font.pixelSize: Theme.fontSize
+        verticalAlignment: Text.AlignVCenter
+    }
 
+    Text {
+        text: Qt.formatDateTime(clock.date, "HH:mm")
+        color: Theme.primaryText
+        font.family: Theme.fontFamily
+        font.pixelSize: Theme.fontSize
+        font.bold: true
+        verticalAlignment: Text.AlignVCenter
+    }
+}
 

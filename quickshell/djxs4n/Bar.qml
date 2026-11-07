@@ -5,53 +5,54 @@
  *    ~/.config/quickshell/djxs4n/theme.qml
  ===========================================*/
 
- import QtQuick
- import QtQuickLayouts
- import Quickshell
- import QuickShell.Wayland
+import QtQuick
+import QtQuick.Layouts
+import Quickshell
+import Quickshell.Wayland
 
- PanelWindow {
-   id: root
+PanelWindow {
+    id: root
 
-   anchors{
-     top:true
-     lefth: true
-     right: true
-   }
+    anchors {
+        top: true
+        left: true
+        right: true
+    }
 
-   margin.top: Theme.barMargin
-   margin.letf: Theme.barMargin
-   margin.right: Theme.barMargin
+    margins.top: Theme.barMargin
+    margins.left: Theme.barMargin
+    margins.right: Theme.barMargin
 
-   implicitHeigth: Theme.barMargi
-   color: "trasparent"
-   exclusiveZone: 0
+    implicitHeight: Theme.barHeight
+    color: "transparent"
+    exclusiveZone: 0
 
-   WlrLayershell.namespace: "djxs4n-bar"
+    WlrLayershell.namespace: "djxs4n-bar-test"
 
-   Rectangle {
-     anchor.fill: parent
-     radius: theme.barRadius
-     color: Theme.windowBackground
-     border.width: Theme.layerBackground
-     border.color: Theme.borderPrimary
-      
-     RowLayout {
-       anchors.fill: parent
-       anchors.lefthMargin: 10
-       anchors.rigthMargin: 10
-       spacing: 10
+    Rectangle {
+        anchors.fill: parent
+        radius: Theme.barRadius
+        color: Theme.windowBackground
+        border.width: 1
+        border.color: Theme.borderPrimary
 
-       Workspaces {
-         Layout.alignment: Qt.AlignVCenter
-       }
-       Item {
-         Laout.fillWidth: true
-       }
-       Clock {
-         Layout.alignmentt: Qt.AlignVCentrer
-       }
-     }
-   }
- }
+        RowLayout {
+            anchors.fill: parent
+            anchors.leftMargin: 10
+            anchors.rightMargin: 10
+            spacing: 10
 
+            Workspace {
+                Layout.alignment: Qt.AlignVCenter
+            }
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            Clock {
+                Layout.alignment: Qt.AlignVCenter
+            }
+        }
+    }
+}
