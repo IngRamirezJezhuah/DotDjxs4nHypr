@@ -27,10 +27,11 @@
 -- Pantalla nativa de la lap
 hl.monitor({
   output   = "eDP-1",
-  mode     = "1920x1080@100.0",
+--  mode     = "1920x1080@100.0",
+  mode = "1920x1080@144",
   position = "1920x0",
   scale    = 1.0,
-  bitdepth = 100,
+--  bitdepth = 100,
 })
 
 -- Monitor externo por HDMI

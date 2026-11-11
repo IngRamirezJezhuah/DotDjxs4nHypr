@@ -4,34 +4,27 @@
  *          BASE REFERENCIA TEMA
  *    ~/.config/quickshell/djxs4n/theme.qml
  ===========================================*/
-
 pragma Singleton
-
 import QtQuick
 
 QtObject {
-    // Paleta base
-    readonly property color windowBackground: "#0f0f15"
-    readonly property color primaryText: "#bac2de"
-    readonly property color layerBackground1: "#C8C8CA"
-    readonly property color layerBackground2: "#7A797C"
-    readonly property color layerBackground3: "#2D282E"
-    readonly property color surfaceText: "#EAE0E7"
-    readonly property color secondaryText: "#CFC3CD"
-    readonly property color borderPrimary: "#C8C8CA"
-    readonly property color shadowColor: "#000000"
-    readonly property color accentPrimary: "#C8C8CA"
-    readonly property color accentSecondary: "#7A797C"
-    readonly property color selectionBackground: "#C8C8CA"
-    readonly property color accentPrimaryText: "#FFFFFF"
-    readonly property color selectionText: "#F2DCF3"
-
-    // Tipografía
-    readonly property string fontFamily: "JetBrains Mono"
+    readonly property string fontFamily: "JetBrainsMono Nerd Font"
     readonly property int fontSize: 12
 
-    // Métricas de la barra
-    readonly property int barHeight: 28
+    readonly property int barHeight: 34
     readonly property int barMargin: 6
-    readonly property int barRadius: 10
+    readonly property int radius: 17
+    readonly property int spacing: 10
+
+    readonly property color island: Qt.rgba(0.10, 0.07, 0.14, 0.88)
+    readonly property color popup: Qt.rgba(0.10, 0.07, 0.14, 0.95)
+    readonly property color border: "#3a2d4a"
+    readonly property color text: "#e6e0ee"
+    readonly property color muted: "#8d819c"
+    readonly property color cyan: "#2ec4d6"
+    readonly property color orange: "#f08a3c"
+    readonly property color accent: "#e4ccde"
+    readonly property color pill: "#f2f2f5"
+    readonly property color pillText: "#1a1424"
+    readonly property color pillOff: "#4a3f5a"
 }

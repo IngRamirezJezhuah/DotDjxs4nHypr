@@ -21,8 +21,7 @@ local scripts = home .. "/.config/hypr/scripts"
 hl.config({
   -- pseudotile y smart_split venían comentados en el vendor
   dwindle = {
-    preserve_split       = true,
-    special_scale_factor = 0.8,
+    preserve_split = true,
   },
 
   master = {
@@ -75,7 +74,6 @@ hl.config({
     workspace_swipe_cancel_ratio      = 0.5,
     workspace_swipe_create_new        = true,
     workspace_swipe_forever           = true,
-    -- workspace_swipe_use_r venía comentada en el vendor
   },
 
   misc = {
@@ -157,8 +155,8 @@ hl.gesture({
 
 hl.config({
   general = {
-    border_size = 2,
-    gaps_in     = 2,
+    border_size = 1,
+    gaps_in     = 3,
     gaps_out    = 4,
     col = {
       active_border   = palette.color[12],
@@ -169,7 +167,7 @@ hl.config({
   decoration = {
     rounding           = 10,
     active_opacity     = 1.0,
-    inactive_opacity   = 0.9,
+    inactive_opacity   = 0.98,
     fullscreen_opacity = 1.0,
 
     dim_inactive = true,
@@ -186,8 +184,8 @@ hl.config({
 
     blur = {
       enabled          = true,
-      size = 6,
-      passes           = 3,
+      size = 8,
+      passes           = 2,
       new_optimizations = true,
       xray             = true,
       ignore_opacity   = true,

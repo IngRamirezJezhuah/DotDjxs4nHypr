@@ -1,1 +1,13 @@
 singleton Theme 1.0 Theme.qml
+Bar 1.0 Bar.qml
+LeftIsland 1.0 LeftIsland.qml
+CenterIsland 1.0 CenterIsland.qml
+RightIsland 1.0 RightIsland.qml
+Island 1.0 Island.qml
+Glyph 1.0 Glyph.qml
+Label 1.0 Label.qml
+Sep 1.0 Sep.qml
+Spectrum 1.0 Spectrum.qml
+Workspaces 1.0 Workspaces.qml
+Clock 1.0 Clock.qml
+CalendarPopup 1.0 CalendarPopup.qml

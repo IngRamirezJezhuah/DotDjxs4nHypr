@@ -9,6 +9,15 @@
 
 local home = os.getenv("HOME")
 local scriptsDir = home .. "/.config/hypr/scripts"
+-- si la ruta existe abrir en lectura
+local function existe(ruta)
+  local f = io.open(ruta, "r")
+  if f then
+    f:close()
+    return true
+  end
+  return false
+end
 
 -- Equivalente a exec-once: se ejecuta una vez al inicio de Hyprland pa que jale
 hl.on("hyprland.start", function()
@@ -23,19 +32,27 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("swww-daemon --format xrgb")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd(home .. "/.config/hypr/scripts/Dropterminal.sh kitty &")
+    --hl.exec_cmd(home .. "/.config/hypr/scripts/Dropterminal.sh kitty &")
     hl.exec_cmd(scriptsDir .. "/Polkit.sh")
     hl.exec_cmd("nm-applet --indicator")
     hl.exec_cmd("nm-tray")
-    hl.exec_cmd("swaync")
-    hl.exec_cmd("waybar")
-    hl.exec_cmd("qs -c overview")
+    -- UI de quickshell solo si la sesion eral existe
+    local qsSesion = os.getenv("HYPR_QS_SESSION") == "1"
+    local qsConfig = home .. "/.config/quickshell/shell.qml"
+
+    if qsSesion and existe(qsConfig) then
+      hl.exec_cmd("qs -n")
+      hl.exec_cmd("swaync")
+    else
+      hl.exec_cmd("swaync")
+      hl.exec_cmd("waybar")
+    end
+
     hl.exec_cmd("hypridle")
     hl.exec_cmd(scriptsDir .. "/Hyprsunset.sh init")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
     hl.exec_cmd("blueman-applet")
-    hl.exec_cmd("ags")
     hl.exec_cmd(scriptsDir .. "/KeybindsLayoutInit.sh")
 
     -- UserConfigs/Startup_Apps.conf: cursor (DEDUPLICADO —

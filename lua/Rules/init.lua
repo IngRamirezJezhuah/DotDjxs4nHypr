@@ -31,6 +31,16 @@ hl.window_rule({ match = { title = "^(KooL Hyprland Settings)$" }, tag = "+KooL_
 hl.window_rule({ match = { class = "^(nwg-displays|nwg-look)$" },   tag = "+KooL-Settings" })
 
 -- terminal / email
+
+hl.window_rule({
+  name = "dropterm",
+  match = {class = "^kitty-dropterm$" },
+  float = true,
+  size = { "(monitor_w*0.65)", "(monitor_h*0.65)" },
+  move = { "17.5%", "17.5%" },
+  workspace =  "special:scratchpad",
+})
+
 hl.window_rule({ match = { class = "^(Alacritty|kitty|kitty-dropterm)$" },     tag = "+terminal" })
 hl.window_rule({ match = { class = "^([Tt]hunderbird|org.mozilla.Thunderbird)$" }, tag = "+email" })
 hl.window_rule({ match = { class = "^(eu.betterbird.Betterbird)$" },            tag = "+email" })
@@ -109,8 +119,6 @@ hl.window_rule({ match = { class  = "^([Ff]erdium)$" },  center = true })
 -- ==========================================================
 
 hl.window_rule({ match = { fullscreen = true },   idle_inhibit = "fullscreen" })
-hl.window_rule({ match = { class = "^(*)$" },      idle_inhibit = "fullscreen" })
-hl.window_rule({ match = { title = "^(*)$" },      idle_inhibit = "fullscreen" })
 
 -- ==========================================================
 --  FLOAT
@@ -174,7 +182,7 @@ hl.window_rule({ match = { tag = "games" }, no_blur = true, fullscreen = false }
 hl.window_rule({ match = { tag = "games" }, fullscreen = false })
 
 -- no robar el foco (IntelliJ / popups de Vite)
-hl.window_rule({ match = { class = "^(jetbrains-*)" }, no_initial_focus = true })
+hl.window_rule({ match = { class = "^(jetbrains-.+)$" }, no_initial_focus = true })
 hl.window_rule({ match = { title = "^(wind.*)$" },      no_initial_focus = true })
 
 -- ==========================================================
@@ -234,3 +242,13 @@ hl.layer_rule({ match = { namespace = "rofi" },              blur = true })
 hl.layer_rule({ match = { namespace = "notifications" },      blur = true })
 hl.layer_rule({ match = { namespace = "quickshell:overview" }, blur = true })
 hl.layer_rule({ match = { namespace = "quickshell:overview" }, ignore_alpha = 0.5 })
+
+-- =========================================
+-- WORKSPACE RULES
+-- Reemplazo de dwindle por que ya no se usa
+-- =========================================
+
+hl.workspace_rule({
+  workspace = "s[true]", 
+    gaps_out = { top = 108, right = 192, bottom = 108, left = 192 },
+})

@@ -1,38 +1,51 @@
 /*=========================================
- *              ᯓᡣ𐭩Djxs4n.ᐟ⊹ 
- *            DJXS4N QUICKSHELL
- *          BASE REFERENCIA TEMA
- *    ~/.config/quickshell/djxs4n/theme.qml
+ *            ᯓᡣ𐭩Djxs4n.ᐟ⊹ 
+ *         DJXS4N QUICKSHELL
+ *          RELOJ Y FECHAS
+ *  ~/.config/quickshell/djxs4n/Clock.qml
  ===========================================*/
-
-import QtQuick
 import Quickshell
+import QtQuick
 
-Row {
-    id: root
+Item {
+  id: root
+  property bool showDate: false
 
-    spacing: 8
+  implicitWidth: row.implicitWidth
+  implicitHeight: Theme. barHeight
 
-    SystemClock {
-        id: clock
-        precision: SystemClock.Minutes
+  SystemClock {
+    id: clock
+    precision: SystemClock.Seconds
+  }
+
+  Row {
+    id: row
+    anchors.verticalCenter: parent.verticalCenter
+    spacing: 6
+
+    Glyph {text: ""; color: Theme.cyan }
+    Label {
+      text: Qt.formatDateTime(clock.date, "HH:mm:ss")
+      color: Theme.cyan
     }
-
-    Text {
-        text: Qt.formatDateTime(clock.date, "ddd d MMM").toUpperCase()
-        color: Theme.secondaryText
-        font.family: Theme.fontFamily
-        font.pixelSize: Theme.fontSize
-        verticalAlignment: Text.AlignVCenter
+    Label {
+      visible: root.showDate
+      text: Qt.formatDateTime(clock.date, "yyyy, dd MMMM, dddd")
+      color: Theme.cyan
     }
+  }
 
-    Text {
-        text: Qt.formatDateTime(clock.date, "HH:mm")
-        color: Theme.primaryText
-        font.family: Theme.fontFamily
-        font.pixelSize: Theme.fontSize
-        font.bold: true
-        verticalAlignment: Text.AlignVCenter
-    }
+  MouseArea {
+    id: area
+    anchors.fill: parent
+    hoverEnabled: true
+    cursorShape: Qt.PointingHandCursor
+    onClicked: root.showDate = !root.showDate
+  }
+
+  CalendarPopup {
+    anchorItem: root
+    open: area.containsMouse
+  }
 }
-
