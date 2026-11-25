@@ -8,5 +8,6 @@ Scope {
             required property var modelData
             screen: modelData
         }
-    }
+      }
+      HintWindow {}
 }

@@ -6,41 +6,38 @@
  ===========================================*/
 import QtQuick
 
-Island {
-  width: row.implicitWidth + 20
-  radius: 10
+IslandCenter {
+  width: row.implicitWidth + 40
 
-    Row {
-        id: row
-        anchors.centerIn: parent
-        spacing: 14
+  Row {
+    id:row
+    anchors.centerIn: parent
+    spacing: 14
 
-        Row {
-            spacing: 5
-            anchors.verticalCenter: parent.verticalCenter
-            Label { text: "0"; color: Theme.orange }
-            Glyph { text: "󰂚"; color: Theme.orange }
-        }
-        Spectrum { anchors.verticalCenter: parent.verticalCenter }
-        Row {
-            spacing: 6
-            anchors.verticalCenter: parent.verticalCenter
-            Glyph { text: ""; color: Theme.cyan }
-            //Label { text: "12:58"; color: Theme.cyan }
-            Clock {anchors.verticalCenter: parent.verticalCenter}
-        }
-        Row {
-            spacing: 6
-            anchors.verticalCenter: parent.verticalCenter
-            Glyph { text: ""; color: Theme.cyan }
-            Label { text: "2026, 09 noviembre, lunes"; color: Theme.cyan }
-        }
-        Workspaces { anchors.verticalCenter: parent.verticalCenter }
-        Row {
-            spacing: 6
-            anchors.verticalCenter: parent.verticalCenter
-            Glyph { text: "󰌌"; color: Theme.orange }
-            Label { text: "HINT!"; color: Theme.orange }
-        }
+    Spectrum { anchors.verticalCenter: parent.verticalCenter }
+
+    Clock { anchors.verticalCenter: parent.verticalCenter }
+
+    Workspaces { anchors.verticalCenter: parent.verticalCenter}
+
+    Item {
+      anchors.verticalCenter: parent.verticalCenter
+      width: hintRow.implicitWidth
+      height: hintRow.implicitHeight
+
+      Row {
+        id: hintRow
+        spacing: 2
+        Glyph { text: "󰵙"; color: Theme.orange }
+        Label { text: "HINT!"; color: Theme.orange }
+      }
+      MouseArea {
+        anchors.fill: parent
+        cursorShape: Qt.PointingHandCursor
+        onClicked: HintState.toggle()
+      }
     }
+
+  }
 }
+
