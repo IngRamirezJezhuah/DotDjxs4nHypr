@@ -1,0 +1,4 @@
+singleton HintState 1.0 HintState.qml
+singleton KeybindsData 1.0 KeybindsData.qml
+HintWindow 1.0 HintWindow.qml
+
