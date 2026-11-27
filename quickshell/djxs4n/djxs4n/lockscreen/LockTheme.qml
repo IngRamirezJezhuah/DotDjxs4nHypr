@@ -18,19 +18,15 @@ Singleton {
 
   readonly property color base: Palette.background
 
-  readonly property color overlay: withAlpha(base, 0.45)
-  readonly property color panel:   withAlpha(base, 0.88)
-  readonly property color card:    withAlpha(Palette.color0, 0.92)
+  readonly property color overlay: withAlpha(base, 0.55)
+  readonly property color panel:   withAlpha(Palette.color7, 0.96)
+  readonly property color card:    withAlpha(Palette.color6, 0.80)
 
-  readonly property color text:    Palette.foreground
-  readonly property color muted:   Palette.color8
-  readonly property color accent:  Palette.color7
+  readonly property color text:    Palette.background
+  readonly property color muted:   Palette.color0
+  readonly property color accent:  Palette.color5
   readonly property color accent2: Palette.color12
-  readonly property color clock:   Palette.color13
+  readonly property color clock:   Palette.color11
   readonly property color danger:  Palette.color9
 
-  // Debug temporal: quítalo cuando funcione
-  Component.onCompleted: {
-    console.log("LockTheme:", base, accent, clock, text)
-  }
 }

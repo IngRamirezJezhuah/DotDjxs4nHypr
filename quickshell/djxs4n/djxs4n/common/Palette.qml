@@ -16,7 +16,7 @@ Singleton {
    property var map: ({})
 
    function get(name, fb) {
-     return map[name] !== undefuned ? map[name] : fb
+     return map[name] !== undefined ? map[name] : fb
    }
 
    //fallback de la paleta actual
@@ -44,7 +44,6 @@ Singleton {
    readonly property string color13: get("color13", "#AE9BA1")
    readonly property string color14: get("color14", "#E7A87F")
    readonly property string color15: get("color15", "#EBCBB7")
-   
    
    function parse(txt) {
      try {
